@@ -1,65 +1,51 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-500/20 to-transparent" />
       
-      {/* Dynamic background effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,138,61,0.1),transparent_50%)] animate-gradient-xy" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto"
-        >
+      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
+        <div className="text-center">
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <span className="bg-gradient-to-r from-white to-orange-400 clip-text">
-              Your AI Companion in
-            </span>
+            Your AI Companion in
             <br />
-            <span className="bg-gradient-to-r from-orange-400 to-white clip-text">
+            <span className="bg-gradient-to-r from-orange-400 to-orange-600 clip-text">
               Spatial Reality
             </span>
           </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+          
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
             Experience the next evolution of human-AI interaction. Where digital beings become real, and possibilities become infinite.
           </motion.p>
-
+          
           <motion.div
-            className="flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Link href="#subscribe">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full font-medium text-lg"
-              >
-                Get Early Access
-              </motion.button>
-            </Link>
+            <a
+              href="#subscribe"
+              className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-4 rounded-full text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200 hover:scale-105"
+            >
+              Join the Waitlist
+            </a>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
